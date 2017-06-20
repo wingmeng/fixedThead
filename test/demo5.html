@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS增删表格处理</title>
+	<link rel="stylesheet" href="../fixedThead.css">
+	<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+	<div class="tool-bar">
+		<h1>JS增删表格处理</h1>
+		<pre><!--
+			--><span class="code">var tableObj = $('#table1');
+   tableObj.fixedThead.option = {
+	vspace: $('.tool-bar').outerHeight() + $('.inner-bar').outerHeight() + 90,
+	top: 10,
+	col: 1
+   }
+   tableObj.fixedThead();</span><span class="code-note"> // 初始化调用</span>
+
+   <span class="code-note">// 当表格进行增、删行操作后，使用 refresh 刷新：</span>
+<span class="code">tableObj.fixedThead('refresh');</span><!--
+--></pre>
+	</div>
+	<div class="box">
+		<div class="inner-bar">
+			<input class="stybtn btn-blu" type="button" value="✚ 新增一行" onclick="addTr()">
+		</div>	
+		<table class="ui-table" id="table1">
+			<thead>
+				<tr>					
+					<th>充电桩</th>
+					<th>类型</th>
+					<th>所属充电站</th>
+					<th>充电消费金额(元)</th>
+					<th>充电电量(度)</th>
+					<th>充电时长</th>
+					<th>充电开始时间</th>
+					<th>充电结束时间</th>
+					<th>消费类型</th>
+					<th>消费详情</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>160612001150</td>
+					<td>直流桩</td>
+					<td>离散充电桩</td>
+					<td>0.00</td>
+					<td>0.00</td>
+					<td>3分39秒</td>
+					<td>2016-8-22 09:51:48</td>
+					<td>2016-8-22 09:55:27</td>
+					<td>IC卡充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160612001150</td>
+					<td>直流桩</td>
+					<td>离散充电桩</td>
+					<td>0.00</td>
+					<td>0.00</td>
+					<td>1分34秒</td>
+					<td>2016-8-22 09:45:50</td>
+					<td>2016-8-22 09:47:24</td>
+					<td>IC卡充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160612001150</td>
+					<td>直流桩</td>
+					<td>离散充电桩</td>
+					<td>0.00</td>
+					<td>0.00</td>
+					<td>7分21秒</td>
+					<td>2016-8-22 09:44:01</td>
+					<td>2016-8-22 09:51:22</td>
+					<td>IC卡充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160612001150</td>
+					<td>直流桩</td>
+					<td>离散充电桩</td>
+					<td>0.00</td>
+					<td>0.00</td>
+					<td>1分44秒</td>
+					<td>2016-8-22 09:38:37</td>
+					<td>2016-8-22 09:40:21</td>
+					<td>IC卡充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160612001150</td>
+					<td>直流桩</td>
+					<td>离散充电桩</td>
+					<td>0.00</td>
+					<td>0.00</td>
+					<td>3分24秒</td>
+					<td>2016-8-22 09:34:30</td>
+					<td>2016-8-22 09:37:54</td>
+					<td>IC卡充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160612001150</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.00</td>
+					<td>0.00</td>
+					<td>8分21秒</td>
+					<td>2016-8-22 09:25:07</td>
+					<td>2016-8-22 09:33:28</td>
+					<td>IC卡充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160612001150</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.00</td>
+					<td>0.00</td>
+					<td>1分34秒</td>
+					<td>2016-8-20 16:08:02</td>
+					<td>2016-8-20 16:09:36</td>
+					<td>IC卡充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>1.37</td>
+					<td>1.06</td>
+					<td>27分31秒</td>
+					<td>2016-8-19 17:48:19</td>
+					<td>2016-8-19 18:15:50</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.10</td>
+					<td>0.00</td>
+					<td>11秒</td>
+					<td>2016-8-19 17:45:54</td>
+					<td>2016-8-19 17:46:05</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>直流桩</td>
+					<td>离散充电桩</td>
+					<td>0.10</td>
+					<td>0.00</td>
+					<td>10秒</td>
+					<td>2016-8-19 17:45:29</td>
+					<td>2016-8-19 17:45:39</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>直流桩</td>
+					<td>离散充电桩</td>
+					<td>0.11</td>
+					<td>0.01</td>
+					<td>12秒</td>
+					<td>2016-8-19 17:44:15</td>
+					<td>2016-8-19 17:44:27</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.14</td>
+					<td>0.04</td>
+					<td>26秒</td>
+					<td>2016-8-19 17:42:23</td>
+					<td>2016-8-19 17:42:49</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.12</td>
+					<td>0.02</td>
+					<td>20秒</td>
+					<td>2016-8-19 17:40:41</td>
+					<td>2016-8-19 17:41:01</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.10</td>
+					<td>0.00</td>
+					<td>10秒</td>
+					<td>2016-8-19 15:07:24</td>
+					<td>2016-8-19 15:07:34</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.11</td>
+					<td>0.01</td>
+					<td>12秒</td>
+					<td>2016-8-19 15:06:13</td>
+					<td>2016-8-19 15:06:25</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.10</td>
+					<td>0.00</td>
+					<td>12秒</td>
+					<td>2016-8-19 15:03:29</td>
+					<td>2016-8-19 15:03:41</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.10</td>
+					<td>0.00</td>
+					<td>10秒</td>
+					<td>2016-8-19 14:59:31</td>
+					<td>2016-8-19 14:59:41</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.10</td>
+					<td>0.00</td>
+					<td>12秒</td>
+					<td>2016-8-19 14:56:36</td>
+					<td>2016-8-19 14:56:48</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.12</td>
+					<td>0.02</td>
+					<td>18秒</td>
+					<td>2016-8-19 14:35:54</td>
+					<td>2016-8-19 14:36:12</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+				<tr>
+					<td>160526001007</td>
+					<td>交流桩</td>
+					<td>离散充电桩</td>
+					<td>0.11</td>
+					<td>0.01</td>
+					<td>10秒</td>
+					<td>2016-8-19 14:34:21</td>
+					<td>2016-8-19 14:34:31</td>
+					<td>手机充电消费</td>
+					<td>
+						<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">✖ 删除</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="../jquery-164.min.js"></script>
+	<script src="../fixedThead.js"></script>
+	<script>
+	eval($('.code:eq(0)').text());
+
+	// 新增
+	function addTr() {
+		tableObj.append(
+			'<tr>' +
+				'<td></td>' +
+				'<td><input type="text"></td>' +
+				'<td><input type="text"></td>' +
+				'<td><input type="text"></td>' +
+				'<td><input type="text"></td>' +
+				'<td><input type="text"></td>' +
+				'<td><input type="text"></td>' +
+				'<td><input type="text"></td>' +
+				'<td><input type="text"></td>' +
+				'<td>' +
+					'<button class="stybtn btn-S btn-red" onclick="deleteTr(this)">' +
+						'✖ 删除' +
+					'</button>' +
+				'</td>' +
+			'</tr>'
+		).fixedThead('refresh');
+	}
+
+	// 删除
+	function deleteTr(btn) {
+		var curTr = $(btn).parent().parent();
+		curTr.remove();
+		tableObj.fixedThead('refresh');
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="demo.css" />
+	<link rel="stylesheet" href="../fixedThead.css" />
+	<style>
+		body {background:#fff;}
+		h1 {padding:1em 0 .2em; margin:0; text-align:center;}
+		.tip {position:absolute; top:5px; right:15px; margin:0; font-size:12px; color:#999;}
+	</style>
+</head>
+<body>
+	<p class="tip">注：该表格内容由JS动态随机生成（姓名除外），构造方法见统计目录下的 <b>wageFactory.js</b> 文件</p>
+	<h1><span id="year">xxxx</span>年一季度员工工资统计表</h1>	
+	<table class="ui-table" id="table1">
+		<thead>
+			<tr>
+				<th rowspan="2">序号</th>
+				<th rowspan="2">姓名</th>
+				<th rowspan="2">工号</th>
+				<th rowspan="2">性别</th>
+				<th rowspan="2">年龄</th>
+				<th rowspan="2">所在部门</th>
+				<th rowspan="2">职位</th>
+			</tr>				
+		</thead>
+		<tbody></tbody>
+	</table>
+	<script src="../jquery-164.min.js"></script>
+	<script src="wageFactory.js"></script>
+	<script src="../fixedThead.js"></script>
+	<script>
+	console.time('生成表格数据');
+	buildDemoTable($('#table1'));
+	console.timeEnd('生成表格数据');
+
+	console.time('应用插件');
+	$('#table1').fixedThead({
+		vspace: $('#year').parent().outerHeight(),
+		top: 10,
+		row: 2,
+		col: 3
+	});
+	console.timeEnd('应用插件');
+	</script>
+</body>
+</html>

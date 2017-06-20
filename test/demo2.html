@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>同页面多表格调用</title>
+	<link rel="stylesheet" href="../fixedThead.css">
+	<link rel="stylesheet" href="demo.css">
+	<style>
+	.data-table {margin-bottom:30px;}
+	</style>
+</head>
+<body>
+	<div class="tool-bar">
+		<h1>同页面多表格调用</h1>
+		<p>可同时为多个表格应用插件，请在下面输入要生成的表格个数，点击“生成表格”会自动生成对应个数的随机表格（行列数、内容均随机）。</p>
+		表格个数：<input type="text" id="table_num" placeholder="整数">&emsp;
+		<input type="button" value="生成表格" onclick="buildTable()">&emsp;
+		<input type="button" class="stybtn btn-blu" id="btn_init" value="应用插件" onclick="initFixedThead()" disabled>&emsp;
+		<span class="tipmsg success" id="tip"></span>
+	</div>
+	<div class="box" id="box">暂未生成任何表格</div>
+	<script src="../jquery-164.min.js"></script>
+	<script src="../fixedThead.js"></script>
+	<script src="demo.js"></script>
+	<script>
+	$('#box').fixedThead.option = {
+		height: 240
+	};
+	function buildTable() {
+		var tableNum = $.trim($('#table_num').val());
+
+		if (tableNum == '') {
+			alert('表格个数不能为空！');
+			return;
+		} else if (isNaN(tableNum)) {
+			alert('请输入数字！');
+			return;			
+		} else if (tableNum <= 0) {
+			alert('请输入正确的表格个数！');
+			return;
+		}
+
+		$('#box').empty();
+
+		for (var i = 0; i < tableNum; i++) {		
+			var oTable = document.createElement('table'),
+				oDiv = document.createElement('div'),
+				trs = '';
+
+			// 随机行列	
+			var rows = getRandomNum(4, 20),
+				cols = getRandomNum(2, 8);
+				
+			oTable.className = 'ui-table';
+			oDiv.className = 'data-table';
+
+			for (var j = 0; j < rows; j++) {
+				trs += '<tr>'
+				for (var k = 0; k < cols; k++) {
+					if (j == 0) {  // 表头
+						trs += '<th>' + getRandomStr(2, 12) + '</th>';
+					} else {
+						trs += '<td>' + getRandomStr(2, 50) + '</td>';
+					}
+				}
+				trs += '</tr>';
+			}
+			$(oTable).html(trs).appendTo(oDiv);
+			$('#box').append($(oDiv));
+		}
+					
+		$('#btn_init').attr('disabled', false);
+		$('#tip').empty();
+	}
+
+	function initFixedThead() {
+		$('#box').find('table').fixedThead();
+		$('#tip').html('已应用插件！');
+	}
+	</script>
+</body>
+</html>
