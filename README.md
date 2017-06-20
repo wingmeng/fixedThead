@@ -7,7 +7,7 @@ A jQuery plug-in for fixed table header
 > 
 > 2016-08-23　v0.0.1 基础版本
 
-[fixedThead.css](fixedThead.css)     [fixedThead.js](fixedThead.js)     [fixedThead.debug.js](fixedThead.debug.js)
+[fixedThead.css](fixedThead.css) &emsp; [fixedThead.js](fixedThead.js) &emsp; [fixedThead.debug.js](fixedThead.debug.js)
 
 ## 一、描述
 
