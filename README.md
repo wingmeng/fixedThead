@@ -84,8 +84,8 @@ A jQuery plug-in for fixed table header
 
     　　有时我们需要将一些公用的参数提取出来进行统一设置来降低维护量，例如同一页面中有多个需要应用fixedThead插件的表格，且某些设置项相同，此时可使用统一参数设置功能。提供两种方式：
 
-    *   **设置单个参数：**后接对应的参数名来设置，例如： `$(Selector).fixedThead.option.vspace = 200;`
-    *   **设置多个参数：**后接参数设置对象，例如：
+    *   **设置单个参数：** 后接对应的参数名来设置，例如： `$(Selector).fixedThead.option.vspace = 200;`
+    *   **设置多个参数：** 后接参数设置对象，例如：
 
         <pre>$(Selector).fixedThead.option = {
         	vspace: 200,
@@ -104,12 +104,12 @@ A jQuery plug-in for fixed table header
 
 ## 六、示例
 
-1.  [静态表格调用](test/demo1.html)
-2.  [同页面多表格调用](test/demo2.html)
-3.  [调用与销毁](test/demo3.html)
-4.  [多行多列固定](test/demo4.html)
-5.  [JS增删表格处理](test/demo4.html)
-6.  [实例：2016年一季度员工工资统计表](test/demo6.html) (170行×79列)
+1.  [静态表格调用](https://wingmeng.github.io/fixedThead/test/demo1.html)
+2.  [同页面多表格调用](https://wingmeng.github.io/fixedThead/test/demo2.html)
+3.  [调用与销毁](https://wingmeng.github.io/fixedThead/test/demo3.html)
+4.  [多行多列固定](https://wingmeng.github.io/fixedThead/test/demo4.html)
+5.  [JS增删表格处理](https://wingmeng.github.io/fixedThead/test/demo4.html)
+6.  [实例：2016年一季度员工工资统计表](https://wingmeng.github.io/fixedThead/test/demo6.html) (170行×79列)
 
 ## 七、版本日志
 
