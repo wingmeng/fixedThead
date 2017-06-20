@@ -7,7 +7,7 @@ A jQuery plug-in for fixed table header
 > 
 > 2016-08-23　v0.0.1 基础版本
 
-[fixedThead.css](fixedThead.css) [fixedThead.js](fixedThead.js) [fixedThead.debug.js](fixedThead.debug.js)
+[fixedThead.css](fixedThead.css)     [fixedThead.js](fixedThead.js)     [fixedThead.debug.js](fixedThead.debug.js)
 
 ## 一、描述
 
@@ -17,11 +17,11 @@ A jQuery plug-in for fixed table header
 
 ## 二、特点
 
-1.  **支持行表头和列表头固定：**可通过row和col参数来设置要固定的行数和列数，可同时设置行、列固定。
-2.  **对HTML结构要求极低：**无需在表格中划分thead、tbody，也无需担心一行（列）中同时存在th、td的情况。
-3.  **UI样式无侵入：**用到的CSS仅包含实现排版用的定位属性，不会影响表格原有的其他UI样式（如颜色、字体、边框等）。
-4.  **流体自适应宽度：**采用流体宽度，自适应父容器宽度，自动判断是否出现滚动条。
-5.  **自动响应尺寸变化：**浏览器尺寸变化时自动调整布局，无论是由此引起的表格宽度变化还是单元格挤压内容换行高度变化。
+1.  **支持行表头和列表头固定：** 可通过row和col参数来设置要固定的行数和列数，可同时设置行、列固定。
+2.  **对HTML结构要求极低：** 无需在表格中划分thead、tbody，也无需担心一行（列）中同时存在th、td的情况。
+3.  **UI样式无侵入：** 用到的CSS仅包含实现排版用的定位属性，不会影响表格原有的其他UI样式（如颜色、字体、边框等）。
+4.  **流体自适应宽度：** 采用流体宽度，自适应父容器宽度，自动判断是否出现滚动条。
+5.  **自动响应尺寸变化：** 浏览器尺寸变化时自动调整布局，无论是由此引起的表格宽度变化还是单元格挤压内容换行高度变化。
 
 ## 二、适用场景
 
