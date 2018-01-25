@@ -107,8 +107,8 @@ A jQuery plug-in for fixed table header
 1.  [静态表格调用](https://wingmeng.github.io/fixedThead/test/demo1.html)
 2.  [同页面多表格调用](https://wingmeng.github.io/fixedThead/test/demo2.html)
 3.  [调用与销毁](https://wingmeng.github.io/fixedThead/test/demo3.html)
-4.  [多行多列固定](https://wingmeng.github.io/fixedThead/test/demo4.html)
-5.  [JS增删表格处理](https://wingmeng.github.io/fixedThead/test/demo4.html)
+4.  ~~[多行多列固定（有bug，待修缮）]~~(https://wingmeng.github.io/fixedThead/test/demo4.html)
+5.  [JS增删表格处理](https://wingmeng.github.io/fixedThead/test/demo5.html)
 6.  [实例：2016年一季度员工工资统计表](https://wingmeng.github.io/fixedThead/test/demo6.html) (170行×79列)
 
 ## 七、版本日志
